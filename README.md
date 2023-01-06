@@ -28,22 +28,31 @@ A browser window will launch (https://localhost:[port]). Note, this window will 
 ```
 query {
   orders {
-    rowId
-    orderNumber
-    orderItems {
-      rowId
-      displayName
-      total
-      quantity
-      item {
+    edges {
+      node {
         rowId
-        itemNumber
-        name
-        price
+        orderNumber
+        orderItems {
+          rowId
+          displayName
+          total
+          quantity
+          item {
+            rowId
+            itemNumber
+            name
+            price
+          }
+        }
       }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
     }
   }
 }
+
 ```
 
 ### By Param/Variable
@@ -77,45 +86,89 @@ variables:
 ```
 query {
   orders(order: [{ orderNumber: DESC }]) {
-    rowId
-    orderNumber
-    orderItems {
-      rowId
-      displayName
-      total
-      quantity
-      item {
+    edges {
+      node {
         rowId
-        itemNumber
-        name
-        price
+        orderNumber
+        orderItems {
+          rowId
+          displayName
+          total
+          quantity
+          item {
+            rowId
+            itemNumber
+            name
+            price
+          }
+        }
       }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
     }
   }
 }
+
 ```
 
 ### Filtering
 ```
 query {
   orders(where: { orderNumber: { contains: "Order_1" } }) {
-    rowId
-    orderNumber
-    orderItems {
-      rowId
-      displayName
-      total
-      quantity
-      item {
+    edges {
+      node {
         rowId
-        itemNumber
-        name
-        price
+        orderNumber
+        orderItems {
+          rowId
+          displayName
+          total
+          quantity
+          item {
+            rowId
+            itemNumber
+            name
+            price
+          }
+        }
       }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+```
+### Paging
+...
+query {
+  orders(first: 1) {
+    edges {
+      node {
+        rowId
+        orderNumber
+        orderItems {
+          rowId
+          displayName
+          total
+          quantity
+          item {
+            rowId
+            itemNumber
+            name
+            price
+          }
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
     }
   }
 }
-```
 
 ## Resources
 https://graphql.org/
