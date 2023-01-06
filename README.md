@@ -16,6 +16,8 @@
      - Create (update) SQLite Database: `dotnet ef database update`
 4. Run/Debug Solution
 
+:warning: You may receive prompts regarding https certs. Allow it to create a cert and trust it.
+
 A browser window will launch (https://localhost:[port]). Note, this window will not navigate anywhere. You must navigate to https://localhost:[port]/graphql/ to get to the Banana Cake Pop playground.
 
 ## GraphQL Query Examples
