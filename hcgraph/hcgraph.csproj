@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="HotChocolate.AspNetCore" />
+    <None Remove="Resolvers\" />
+    <None Remove="Data\Mocks\" />
+    <None Remove="Domain\Repositories\" />
+    <None Remove="Domain\Models\" />
+    <None Remove="Domain\Services\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
+    <None Remove="HotChocolate.Data.EntityFramework" />
+    <None Remove="ModelExtensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="12.16.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.1" />
+    <PackageReference Include="HotChocolate.Data.EntityFramework" Version="12.16.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resolvers\" />
+    <Folder Include="Domain\Repositories\" />
+    <Folder Include="Domain\Models\" />
+    <Folder Include="Domain\Services\" />
+    <Folder Include="ModelExtensions\" />
+  </ItemGroup>
+</Project>
