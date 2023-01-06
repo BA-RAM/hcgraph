@@ -104,3 +104,10 @@ query {
   }
 }
 ```
+
+## Resources
+https://graphql.org/
+
+https://chillicream.com/docs/hotchocolate/v12
+
+https://chillicream.com/products/bananacakepop
