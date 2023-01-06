@@ -8,6 +8,9 @@
 2. Build Solution
 3. Open Terminal in Visual Studio
    - Navigate to the directory containing the .csproj
+   - Ensure .NET EF tools are installed
+     - From terminal, run `dotnet ef`
+     - If you receive an error (unknown command) run `dotnet tool install --global dotnet-ef`
    - Run the following commands:
      - Setup Initial EF Core Migration: `dotnet ef migrations add initial`
      - Create (update) SQLite Database: `dotnet ef database update`
