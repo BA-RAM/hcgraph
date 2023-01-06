@@ -16,7 +16,7 @@
      - Create (update) SQLite Database: `dotnet ef database update`
 4. Run/Debug Solution
 
-A browser window will launch (https://localhost:5000). Note, this window will not navigate anywhere. You must navigate to https://localhost:5000/graphql/ to get to the Banana Cake Pop playground.
+A browser window will launch (https://localhost:[port]). Note, this window will not navigate anywhere. You must navigate to https://localhost:[port]/graphql/ to get to the Banana Cake Pop playground.
 
 ## GraphQL Query Examples
 
