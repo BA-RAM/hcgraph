@@ -2,7 +2,7 @@
 
 ## Setup
 
-1) Clone Repo
+1) Clone Repo (or download code directly from GH)
 2) Build Solution
 3) Setup Initial EF Core Migration: `dotnet ef migrations add initial`
 4) Create (update) SQLite Database: `dotnet ef database update`
