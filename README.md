@@ -1,5 +1,7 @@
 # Hot Chocolate GraphQL Sample Proj
 
+:rocket: **Feel free to contribute**
+
 ## Setup
 
 1) Clone Repo (or download code directly from GH)
