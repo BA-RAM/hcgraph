@@ -8,8 +8,9 @@
 2. Build Solution
 3. Open Terminal in Visual Studio
    - Navigate to the directory containing the .csproj
-   - Setup Initial EF Core Migration: `dotnet ef migrations add initial`
-   - Create (update) SQLite Database: `dotnet ef database update`
+   - Run the following commands:
+     - Setup Initial EF Core Migration: `dotnet ef migrations add initial`
+     - Create (update) SQLite Database: `dotnet ef database update`
 4. Run/Debug Solution
 
 A browser window will launch (https://localhost:5000). Note, this window will not navigate anywhere. You must navigate to https://localhost:5000/graphql/ to get to the Banana Cake Pop playground.
