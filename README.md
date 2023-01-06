@@ -4,11 +4,13 @@
 
 ## Setup
 
-1) Clone Repo (or download code directly from GH)
-2) Build Solution
-3) Setup Initial EF Core Migration: `dotnet ef migrations add initial`
-4) Create (update) SQLite Database: `dotnet ef database update`
-5) Run/Debug Solution
+1. Clone Repo (or download code directly from GH)
+2. Build Solution
+3. Open Terminal in Visual Studio
+   - Navigate to the directory containing the .csproj
+   - Setup Initial EF Core Migration: `dotnet ef migrations add initial`
+   - Create (update) SQLite Database: `dotnet ef database update`
+4. Run/Debug Solution
 
 A browser window will launch (https://localhost:5000). Note, this window will not navigate anywhere. You must navigate to https://localhost:5000/graphql/ to get to the Banana Cake Pop playground.
 
