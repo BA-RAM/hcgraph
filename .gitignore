@@ -1,4 +1,6 @@
 .DS_Store
+.db
+
 bin/
 obj/
 .vs/
