@@ -1,8 +1,7 @@
-﻿using System;
-using hcgraph.Domain.Models;
+﻿using hcgraph.Domain.Models;
 using hcgraph.Domain.Services;
 
-namespace hcgraph.Resolvers
+namespace hcgraph.Resolvers.Queries
 {
     [ExtendObjectType("Query")]
     public class OrderResolver

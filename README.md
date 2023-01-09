@@ -25,6 +25,7 @@ A browser window will launch (https://localhost:[port]). Note, this window will 
 ## GraphQL Query Examples
 
 ### Simple Query
+
 ```
 query {
   orders {
@@ -47,6 +48,7 @@ query {
 ```
 
 ### By Param/Variable
+
 ```
 query ($orderId: Long!) {
   order(rowId: $orderId) {
@@ -74,6 +76,7 @@ variables:
 ```
 
 ### Sorting
+
 ```
 query {
   orders(order: [{ orderNumber: DESC }]) {
@@ -96,6 +99,7 @@ query {
 ```
 
 ### Filtering
+
 ```
 query {
   orders(where: { orderNumber: { contains: "Order_1" } }) {
@@ -117,7 +121,33 @@ query {
 }
 ```
 
+### Mutations
+
+```
+mutation addOrderItem($input: AddOrderItemInput!)
+{
+  addOrderItem(input: $input) {
+    orderItem {
+      rowId
+      orderId
+      quantity
+      itemId
+    }
+  }
+}
+
+variables:
+{
+  "input": {
+    "orderID": 1,
+    "itemNumber": "Y_123",
+    "quantity": 2
+  }
+}
+```
+
 ## Resources
+
 https://graphql.org/
 
 https://chillicream.com/docs/hotchocolate/v12
