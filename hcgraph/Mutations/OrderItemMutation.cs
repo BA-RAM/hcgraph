@@ -1,9 +1,8 @@
-using hcgraph.Domain.Models;
-using hcgraph.Domain.Services;
+using HcGraph.Domain.Models;
+using HcGraph.Domain.Services;
 
-namespace hcgraph.Mutations
+namespace HcGraph.Mutations
 {
-
     [ExtendObjectType("Mutation")]
     public class OrderItemMutation
     {
@@ -22,8 +21,7 @@ namespace hcgraph.Mutations
                 throw new Exception("Unable to load item");
             }
 
-            var orderItem = new OrderItem() {OrderId = orderID, ItemId = itemLookup.RowId, Quantity = quantity};
-
+            var orderItem = new OrderItem() { OrderId = orderID, ItemId = itemLookup.RowId, Quantity = quantity };
 
             orderService.CreateOrderItem(orderItem);
 

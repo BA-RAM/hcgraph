@@ -1,13 +1,21 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 
-namespace hcgraph.Domain.Models
+namespace HcGraph.Domain.Models
 {
     public class SampleDbContext : DbContext
     {
-        public SampleDbContext(DbContextOptions<SampleDbContext> options) : base(options)
+        public SampleDbContext(DbContextOptions<SampleDbContext> options) 
+        : base(options)
         {
         }
+
+        public DbSet<Order> Orders { get; set; } = null!;
+
+        public DbSet<OrderItem> OrderItems { get; set; } = null!;
+
+        public DbSet<Item> Items { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,10 +27,6 @@ namespace hcgraph.Domain.Models
             optionsBuilder.UseSqlite(configuration.GetConnectionString("DefaultConnection"));
         }
 
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<Item> Items { get; set; }
-
         // Set schema and seed test data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,7 +37,8 @@ namespace hcgraph.Domain.Models
                 entity.Property(e => e.OrderDate);
                 entity.Property(e => e.OrderNumber).HasMaxLength(250);
 
-                entity.HasData(new Order
+                entity.HasData(
+                    new Order
                 {
                     RowId = 1,
                     LastModified = DateTime.UtcNow,
@@ -56,7 +61,8 @@ namespace hcgraph.Domain.Models
                 entity.Property(e => e.ItemId);
                 entity.Property(e => e.Quantity);
 
-                entity.HasData(new OrderItem
+                entity.HasData(
+                    new OrderItem
                 {
                     RowId = 1,
                     LastModified = DateTime.UtcNow,
@@ -81,7 +87,8 @@ namespace hcgraph.Domain.Models
                 entity.Property(e => e.Name).HasMaxLength(250);
                 entity.Property(e => e.Price);
 
-                entity.HasData(new Item
+                entity.HasData(
+                    new Item
                 {
                     RowId = 1,
                     LastModified = DateTime.UtcNow,
@@ -100,4 +107,3 @@ namespace hcgraph.Domain.Models
         }
     }
 }
-

@@ -4,6 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <CodeAnalysisRuleSet>$(ProjectDir).stylecop/stylecop.ruleset.xml</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
@@ -30,6 +31,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.1" />
     <PackageReference Include="HotChocolate.Data.EntityFramework" Version="12.16.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resolvers\" />
@@ -37,5 +42,8 @@
     <Folder Include="Domain\Models\" />
     <Folder Include="Domain\Services\" />
     <Folder Include="ModelExtensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include=".stylecop/stylecop.json" />
   </ItemGroup>
 </Project>

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Text;
-using hcgraph.Domain.Models;
-using hcgraph.Domain.Services;
+﻿using HcGraph.Domain.Models;
+using HcGraph.Domain.Services;
 
-namespace hcgraph.ModelExtensions
+namespace HcGraph.ModelExtensions
 {
     [ExtendObjectType(typeof(OrderItem))]
     public class OrderItemExtensions
@@ -15,7 +13,9 @@ namespace hcgraph.ModelExtensions
             var item = await orderService.GetItem(orderItem.ItemId);
 
             if (item == null || !item.Price.HasValue)
+            {
                 return 0;
+            }
 
             return orderItem.Quantity * item.Price.Value;
         }

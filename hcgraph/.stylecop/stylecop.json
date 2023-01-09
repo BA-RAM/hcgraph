@@ -1,0 +1,21 @@
+{
+    "$schema": "./stylecop.schema.json",
+    "settings": {
+        "namingRules": {
+            "allowedNamespaceComponents": [
+                "hcgraph"
+            ]
+        },
+        "orderingRules": {
+            "usingDirectivesPlacement": "outsideNamespace"
+        },
+        "documentationRules": {
+            "documentInterfaces": false,
+            "documentExposedElements": false,
+            "documentInternalElements": false,
+            "documentPrivateElements": false,
+            "documentPrivateFields": false,
+            "xmlHeader": false
+        }
+    }
+}

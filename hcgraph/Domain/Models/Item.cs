@@ -1,7 +1,6 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace hcgraph.Domain.Models
+namespace HcGraph.Domain.Models
 {
     public class Item : BaseModel
     {
@@ -18,4 +17,3 @@ namespace hcgraph.Domain.Models
         public virtual ICollection<OrderItem>? OrderItems { get; set; }
     }
 }
-

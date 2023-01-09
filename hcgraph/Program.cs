@@ -1,21 +1,22 @@
-﻿using hcgraph.Domain.Models;
-using hcgraph.Domain.Repositories;
-using hcgraph.Domain.Services;
-using hcgraph.ModelExtensions;
+﻿using HcGraph.Domain.Models;
+using HcGraph.Domain.Repositories;
+using HcGraph.Domain.Services;
+using HcGraph.ModelExtensions;
+using HcGraph.Mutations;
+using HcGraph.Queries;
 using Microsoft.EntityFrameworkCore;
-using hcgraph.Queries;
-using hcgraph.Mutations;
 
-IConfigurationRoot _configuration = new ConfigurationBuilder()
+IConfigurationRoot configuration = new ConfigurationBuilder()
             .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
             .AddJsonFile("appsettings.json")
             .Build();
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<SampleDbContext>(options =>
+builder.Services.AddDbContext<SampleDbContext>(
+    options =>
 {
-    options.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
+    options.UseSqlite(configuration.GetConnectionString("DefaultConnection"));
 }, ServiceLifetime.Transient);
 
 builder.Services

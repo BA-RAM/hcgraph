@@ -1,8 +1,7 @@
-﻿using System;
-using hcgraph.Domain.Models;
-using hcgraph.Domain.Services;
+﻿using HcGraph.Domain.Models;
+using HcGraph.Domain.Services;
 
-namespace hcgraph.ModelExtensions
+namespace HcGraph.ModelExtensions
 {
     [ExtendObjectType(typeof(Order))]
     public class OrderExtensions
@@ -10,4 +9,3 @@ namespace hcgraph.ModelExtensions
         public async Task<List<OrderItem>> GetOrderItems([Service] IOrderService orderService, [Parent] Order order) => await orderService.GetOrderItemsByOrderId(order.RowId);
     }
 }
-

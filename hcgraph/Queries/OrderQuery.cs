@@ -1,7 +1,7 @@
-﻿using hcgraph.Domain.Models;
-using hcgraph.Domain.Services;
+﻿using HcGraph.Domain.Models;
+using HcGraph.Domain.Services;
 
-namespace hcgraph.Queries
+namespace HcGraph.Queries
 {
     [ExtendObjectType("Query")]
     public class OrderQuery
@@ -14,4 +14,3 @@ namespace hcgraph.Queries
         public async Task<Order?> GetOrder([Service] IOrderService orderService, long rowId) => await orderService.GetOrder(rowId);
     }
 }
-

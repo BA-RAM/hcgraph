@@ -1,8 +1,7 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace hcgraph.Domain.Models
+namespace HcGraph.Domain.Models
 {
     public class BaseModel
     {
@@ -14,4 +13,3 @@ namespace hcgraph.Domain.Models
         public DateTime LastModified { get; set; }
     }
 }
-
