@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace hcgraph.Domain.Models
 {
+    //Test
     public class BaseModel
     {
         [Key]
