@@ -7,6 +7,7 @@ namespace hcgraph.Resolvers
     [ExtendObjectType("Query")]
     public class OrderResolver
     {
+        [UsePaging]
         [UseSorting]
         [UseFiltering]
         public async Task<List<Order>> GetOrders([Service] IOrderService orderService) => await orderService.GetOrders();
