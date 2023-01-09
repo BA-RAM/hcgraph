@@ -22,6 +22,11 @@ A browser window will launch (https://localhost:[port]). Note, this window will 
 
 <img width="1349" alt="image" src="https://user-images.githubusercontent.com/27896263/211103225-354180c8-1d0c-4491-a7b7-9ddf5bcfa6e2.png">
 
+## StyleCop/Linter Info
+I downloaded the default StyleCop rules. There are a ton. I tweaked a few I ran into by turning their level from `Warning` to `None` in the ruleset. Feel free to do the same with any that don't make sense.
+
+To enable analyzer in VS Code, go to VS Code Settings and search for `omnisharp analyzers`. :white_check_mark: Enable Roslyn Analyzers.
+
 ## GraphQL Query Examples
 
 ### Simple Query
