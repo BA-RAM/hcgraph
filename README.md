@@ -177,6 +177,31 @@ query {
 }
 ```
 
+### Mutations
+
+```
+mutation addOrderItem($input: AddOrderItemInput!)
+{
+  addOrderItem(input: $input) {
+    orderItem {
+      rowId
+      orderId
+      quantity
+      itemId
+    }
+  }
+}
+
+variables:
+{
+  "input": {
+    "orderID": 1,
+    "itemNumber": "Y_123",
+    "quantity": 2
+  }
+}
+```
+
 ## Resources
 
 https://graphql.org/
