@@ -12,6 +12,7 @@ namespace hcgraph.Domain.Services
         public Task<OrderItem?> GetOrderItem(long id);
         public Task<List<OrderItem>> GetOrderItemsByOrderId(long orderId);
         public void CreateOrderItem(OrderItem orderItem);
+        public void DeleteOrderItem(OrderItem orderItem);
 
         public Task<List<Item>> GetItems();
         public Task<Item?> GetItem(long id);
@@ -38,6 +39,7 @@ namespace hcgraph.Domain.Services
         public Task<OrderItem?> GetOrderItem(long id) => _orderItemRepository.GetOrderItem(id);
         public Task<List<OrderItem>> GetOrderItemsByOrderId(long orderId) => _orderItemRepository.GetOrderItemsByOrderId(orderId);
         public void CreateOrderItem(OrderItem orderItem) => _orderItemRepository.Create(orderItem);
+        public void DeleteOrderItem(OrderItem orderItem) => _orderItemRepository.Delete(orderItem);
 
         public Task<List<Item>> GetItems() => _itemRepository.GetItems();
         public Task<Item?> GetItem(long id) => _itemRepository.GetItem(id);

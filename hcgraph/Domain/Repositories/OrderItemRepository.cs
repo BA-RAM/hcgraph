@@ -6,6 +6,7 @@ namespace hcgraph.Domain.Repositories
     public interface IOrderItemRepository
     {
         public void Create(OrderItem orderItem);
+        public void Delete(OrderItem orderItem);
         public Task<List<OrderItem>> GetOrderItems();
         public Task<OrderItem?> GetOrderItem(long rowId);
         public Task<List<OrderItem>> GetOrderItemsByOrderId(long orderId);
@@ -27,6 +28,12 @@ namespace hcgraph.Domain.Repositories
         public void Create(OrderItem orderItem)
         {
             _dbContext.OrderItems.Add(orderItem);
+            _dbContext.SaveChanges();
+        }
+
+        public void Delete(OrderItem orderItem)
+        {
+            _dbContext.OrderItems.Remove(orderItem);
             _dbContext.SaveChanges();
         }
     }
