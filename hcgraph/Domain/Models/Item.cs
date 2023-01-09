@@ -15,7 +15,7 @@ namespace hcgraph.Domain.Models
 
         public decimal? Price { get; set; }
 
-        public virtual ICollection<OrderItem> OrderItems { get; set; }
+        public virtual ICollection<OrderItem>? OrderItems { get; set; }
     }
 }
 

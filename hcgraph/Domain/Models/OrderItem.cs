@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace hcgraph.Domain.Models
 {
-    //[Table("OrderItem")]
     public class OrderItem : BaseModel
     {
         [Required]
@@ -16,8 +15,8 @@ namespace hcgraph.Domain.Models
         [Required]
         public int Quantity { get; set; }
 
-        public virtual Order Order { get; set; }
-        public virtual Item Item { get; set; }
+        public virtual Order? Order { get; set; }
+        public virtual Item? Item { get; set; }
     }
 }
 

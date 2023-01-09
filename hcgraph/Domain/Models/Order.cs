@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace hcgraph.Domain.Models
 {
-    //[Table("Order")]
     public class Order : BaseModel
     {
         [Required]
@@ -14,7 +13,7 @@ namespace hcgraph.Domain.Models
         [Required]
         public DateTime OrderDate { get; set; }
 
-        public virtual ICollection<OrderItem> OrderItems { get; set; }
+        public virtual ICollection<OrderItem>? OrderItems { get; set; }
     }
 }
 
