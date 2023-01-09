@@ -1,10 +1,10 @@
 ﻿using hcgraph.Domain.Models;
 using hcgraph.Domain.Services;
 
-namespace hcgraph.Resolvers.Queries
+namespace hcgraph.Queries
 {
     [ExtendObjectType("Query")]
-    public class OrderResolver
+    public class OrderQuery
     {
         [UseSorting]
         [UseFiltering]

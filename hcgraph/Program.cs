@@ -3,8 +3,8 @@ using hcgraph.Domain.Repositories;
 using hcgraph.Domain.Services;
 using hcgraph.ModelExtensions;
 using Microsoft.EntityFrameworkCore;
-using hcgraph.Resolvers.Queries;
-using hcgraph.Resolvers.Mutations;
+using hcgraph.Queries;
+using hcgraph.Mutations;
 
 IConfigurationRoot _configuration = new ConfigurationBuilder()
             .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
@@ -28,9 +28,9 @@ builder.Services
     .AddGraphQLServer()
     .AddMutationConventions(applyToAllMutations: true)
     .AddQueryType(q => q.Name("Query"))
-    .AddType<OrderResolver>()
-    .AddType<OrderItemResolver>()
-    .AddType<ItemResolver>()
+    .AddType<OrderQuery>()
+    .AddType<OrderItemQuery>()
+    .AddType<ItemQuery>()
     .AddTypeExtension<OrderExtensions>()
     .AddTypeExtension<OrderItemExtensions>()
     .AddMutationType(m => m.Name("Mutation"))

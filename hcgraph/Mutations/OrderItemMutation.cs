@@ -1,7 +1,7 @@
 using hcgraph.Domain.Models;
 using hcgraph.Domain.Services;
 
-namespace hcgraph.Resolvers.Mutations
+namespace hcgraph.Mutations
 {
 
     [ExtendObjectType("Mutation")]
