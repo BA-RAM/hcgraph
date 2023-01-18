@@ -11,9 +11,15 @@ namespace hcgraph.Domain.Models
         public string OrderNumber { get; set; } = string.Empty;
 
         [Required]
-        public DateTime OrderDate { get; set; }
+        public DateTime OrderDate
+        {
+            get; set;
+        }
 
-        public virtual ICollection<OrderItem>? OrderItems { get; set; }
+        public virtual ICollection<OrderItem>? OrderItems
+        {
+            get; set;
+        }
     }
 }
 

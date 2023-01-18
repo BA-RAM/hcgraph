@@ -19,9 +19,9 @@ namespace hcgraph.Domain.Models
             optionsBuilder.UseSqlite(configuration.GetConnectionString("DefaultConnection"));
         }
 
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<Item> Items { get; set; }
+        public DbSet<Order> Orders { get; set; } = null!;
+        public DbSet<OrderItem> OrderItems { get; set; } = null!;
+        public DbSet<Item> Items { get; set; } = null!;
 
         // Set schema and seed test data
         protected override void OnModelCreating(ModelBuilder modelBuilder)

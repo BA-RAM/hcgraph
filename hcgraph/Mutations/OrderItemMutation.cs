@@ -22,7 +22,12 @@ namespace hcgraph.Mutations
                 throw new Exception("Unable to load item");
             }
 
-            var orderItem = new OrderItem() {OrderId = orderID, ItemId = itemLookup.RowId, Quantity = quantity};
+            var orderItem = new OrderItem()
+            {
+                OrderId = orderID,
+                ItemId = itemLookup.RowId,
+                Quantity = quantity
+            };
 
             orderService.CreateOrderItem(orderItem);
 
@@ -30,7 +35,7 @@ namespace hcgraph.Mutations
         }
 
         [UseMutationConvention]
-        public async Task<Order> DeleteOrderItemAsync([Service] IOrderService orderService, [ID] long orderItemID) 
+        public async Task<Order> DeleteOrderItemAsync([Service] IOrderService orderService, [ID] long orderItemID)
         {
             var orderItemLookup = await orderService.GetOrderItem(orderItemID);
             if (orderItemLookup == null)
@@ -39,7 +44,7 @@ namespace hcgraph.Mutations
             }
 
             orderService.DeleteOrderItem(orderItemLookup);
-            
+
             var orderLookup = await orderService.GetOrder(orderItemLookup.OrderId);
             if (orderLookup == null)
             {
