@@ -2,6 +2,12 @@
 
 :rocket: **Feel free to contribute**
 
+## Contents
+* [Setup](https://github.com/BA-RAM/hcgraph/blob/main/README.md#setup)
+* [Code Analyzation](https://github.com/BA-RAM/hcgraph/blob/main/README.md#code-analyzation)
+* [GraphQL Query Examples](https://github.com/BA-RAM/hcgraph/blob/main/README.md#graphql-query-examples)
+* [Resources](https://github.com/BA-RAM/hcgraph/blob/main/README.md#resources)
+
 ## Setup
 
 1. Clone Repo (or download code directly from GH)
