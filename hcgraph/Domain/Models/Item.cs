@@ -13,9 +13,15 @@ namespace hcgraph.Domain.Models
         [MaxLength(250)]
         public string Name { get; set; } = string.Empty;
 
-        public decimal? Price { get; set; }
+        public decimal? Price
+        {
+            get; set;
+        }
 
-        public virtual ICollection<OrderItem>? OrderItems { get; set; }
+        public virtual ICollection<OrderItem>? OrderItems
+        {
+            get; set;
+        }
     }
 }
 
