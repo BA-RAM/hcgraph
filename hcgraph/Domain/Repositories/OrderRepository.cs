@@ -1,5 +1,4 @@
-﻿using System;
-using hcgraph.Domain.Models;
+﻿using hcgraph.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace hcgraph.Domain.Repositories
@@ -20,7 +19,8 @@ namespace hcgraph.Domain.Repositories
         }
 
         public Task<List<Order>> GetOrders() => _dbContext.Orders.ToListAsync();
-        public Task<Order?> GetOrder(long rowId) => _dbContext.Orders.Where(o => o.RowId == rowId).FirstOrDefaultAsync();
+
+        public Task<Order?> GetOrder(long rowId) =>
+            _dbContext.Orders.Where(o => o.RowId == rowId).FirstOrDefaultAsync();
     }
 }
-

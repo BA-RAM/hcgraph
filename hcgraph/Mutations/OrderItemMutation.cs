@@ -3,12 +3,16 @@ using hcgraph.Domain.Services;
 
 namespace hcgraph.Mutations
 {
-
     [ExtendObjectType("Mutation")]
     public class OrderItemMutation
     {
         [UseMutationConvention]
-        public async Task<OrderItem> AddOrderItemAsync([Service] IOrderService orderService, [ID] long orderID, string itemNumber, int quantity)
+        public async Task<OrderItem> AddOrderItemAsync(
+            [Service] IOrderService orderService,
+            [ID] long orderID,
+            string itemNumber,
+            int quantity
+        )
         {
             var orderLookup = await orderService.GetOrder(orderID);
             if (orderLookup == null)
@@ -35,7 +39,10 @@ namespace hcgraph.Mutations
         }
 
         [UseMutationConvention]
-        public async Task<Order> DeleteOrderItemAsync([Service] IOrderService orderService, [ID] long orderItemID)
+        public async Task<Order> DeleteOrderItemAsync(
+            [Service] IOrderService orderService,
+            [ID] long orderItemID
+        )
         {
             var orderItemLookup = await orderService.GetOrderItem(orderItemID);
             if (orderItemLookup == null)

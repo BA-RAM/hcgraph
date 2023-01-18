@@ -9,9 +9,10 @@ namespace hcgraph.Queries
         [UsePaging]
         [UseSorting]
         [UseFiltering]
-        public async Task<List<Order>> GetOrders([Service] IOrderService orderService) => await orderService.GetOrders();
+        public async Task<List<Order>> GetOrders([Service] IOrderService orderService) =>
+            await orderService.GetOrders();
 
-        public async Task<Order?> GetOrder([Service] IOrderService orderService, long rowId) => await orderService.GetOrder(rowId);
+        public async Task<Order?> GetOrder([Service] IOrderService orderService, long rowId) =>
+            await orderService.GetOrder(rowId);
     }
 }
-

@@ -22,8 +22,12 @@ namespace hcgraph.Domain.Repositories
         }
 
         public Task<List<OrderItem>> GetOrderItems() => _dbContext.OrderItems.ToListAsync();
-        public Task<OrderItem?> GetOrderItem(long rowId) => _dbContext.OrderItems.Where(oi => oi.RowId == rowId).FirstOrDefaultAsync();
-        public Task<List<OrderItem>> GetOrderItemsByOrderId(long orderId) => _dbContext.OrderItems.Where(oi => oi.OrderId == orderId).ToListAsync();
+
+        public Task<OrderItem?> GetOrderItem(long rowId) =>
+            _dbContext.OrderItems.Where(oi => oi.RowId == rowId).FirstOrDefaultAsync();
+
+        public Task<List<OrderItem>> GetOrderItemsByOrderId(long orderId) =>
+            _dbContext.OrderItems.Where(oi => oi.OrderId == orderId).ToListAsync();
 
         public void Create(OrderItem orderItem)
         {
@@ -38,4 +42,3 @@ namespace hcgraph.Domain.Repositories
         }
     }
 }
-

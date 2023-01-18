@@ -1,6 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace hcgraph.Domain.Models
 {
@@ -11,15 +9,8 @@ namespace hcgraph.Domain.Models
         public string OrderNumber { get; set; } = string.Empty;
 
         [Required]
-        public DateTime OrderDate
-        {
-            get; set;
-        }
+        public DateTime OrderDate { get; set; }
 
-        public virtual ICollection<OrderItem>? OrderItems
-        {
-            get; set;
-        }
+        public virtual ICollection<OrderItem>? OrderItems { get; set; }
     }
 }
-

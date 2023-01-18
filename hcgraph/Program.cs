@@ -2,21 +2,24 @@
 using hcgraph.Domain.Repositories;
 using hcgraph.Domain.Services;
 using hcgraph.ModelExtensions;
-using Microsoft.EntityFrameworkCore;
 using hcgraph.Queries;
 using hcgraph.Mutations;
+using Microsoft.EntityFrameworkCore;
 
 IConfigurationRoot _configuration = new ConfigurationBuilder()
-            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-            .AddJsonFile("appsettings.json")
-            .Build();
+    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+    .AddJsonFile("appsettings.json")
+    .Build();
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<SampleDbContext>(options =>
-{
-    options.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
-}, ServiceLifetime.Transient);
+builder.Services.AddDbContext<SampleDbContext>(
+    options =>
+    {
+        options.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
+    },
+    ServiceLifetime.Transient
+);
 
 builder.Services
     .AddScoped<IItemRepository, ItemRepository>()
