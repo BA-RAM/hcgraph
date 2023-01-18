@@ -22,6 +22,13 @@ A browser window will launch (https://localhost:[port]). Note, this window will 
 
 <img width="1349" alt="image" src="https://user-images.githubusercontent.com/27896263/211103225-354180c8-1d0c-4491-a7b7-9ddf5bcfa6e2.png">
 
+## Code Analyzation
+VS Code users enable the following VS Code settings for code analyzation:
+
+<img width="459" alt="image" src="https://user-images.githubusercontent.com/27896263/213287083-0a2a5786-ca45-4e1c-8933-4b9dfe7e6ef7.png">
+
+<img width="666" alt="image" src="https://user-images.githubusercontent.com/27896263/213287147-43ba2186-17fd-4e4f-8b2a-5b64acc46a85.png">
+
 ## GraphQL Query Examples
 
 ### Simple Query
